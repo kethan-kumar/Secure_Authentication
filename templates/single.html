@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="overlayer"></div>
+<div class="loader">
+    <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<div class="site-wrap">
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+                <span class="icon-close2 js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    {% include 'header.html' %}
+    <div class="site-blocks-cover overlay" data-aos="fade">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-8 mt-lg-5 text-center">
+                    <h1>CLOUD9</h1>
+                    <p class="post-meta">SECURE BANKING SOLUTION</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'trackApplication.html' %}
+    {% include 'applyApplication.html' %}
+    {% include 'team.html' %}
+    {% include 'footer.html' %}
+</div>
+</div> <!-- .site-wrap -->
+
+{% endblock %}

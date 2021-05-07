@@ -1,0 +1,82 @@
+<section class="site-section" id="trackApplication-section">
+    <div class="container">
+        <div class="row mb-5 justify-content-center">
+            <div class="col-md-10 text-center">
+                <h2 class="section-title mb-3" data-aos="fade-up" data-aos-delay="" style="color:#44A08D;">Track
+                    Application</h2>
+                <div class="border-top border-bottom pt-7">
+                    <h4 class=" text-info" data-aos="fade-up" data-aos-delay="100">{{ application_Status }}</h4>
+                    {% if not statusFlag %}
+                    <form action="/track" id="trackForm" method="post">
+                        <div class="form-group">
+                            <label for="email">Enter your Email Id</label>
+                            <input class="form-control" id="email" name="email" type="text">
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <input class="btn btn-primary btn-md text-white" style="background: #44A08D;border-color: #44A08D;"
+                                       type="submit" value="Track">
+                            </div>
+                        </div>
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="border">
+            <div class="'row">
+                <div class="col text-center">
+                    <h6 class="section-title mb-3" data-aos="fade-up" data-aos-delay="" style="color:#44A08D;">About
+                        Loan Process</h6>
+                </div>
+            </div>
+            <div class="row align-items-lg-center">
+                <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
+                    <div class="owl-carousel slide-one-item-alt">
+                        <img alt="Image" class="img-fluid" src="{{ url_for('static', filename='images/slide_1.jpg') }}">
+                        <img alt="Image" class="img-fluid" src="{{ url_for('static', filename='images/slide_2.jpg') }}">
+                        <img alt="Image" class="img-fluid" src="{{ url_for('static', filename='images/slide_3.jpg') }}">
+                    </div>
+                    <div class="custom-direction" style="background:#17a2b8;">
+                        <a class="custom-prev" href="#">
+                            <span> < </span>
+                        </a>
+                        <a class="custom-next" href="#">
+                            <span> > </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
+                    <div class="owl-carousel slide-one-item-alt-text">
+                        <div>
+                            <h2 class="section-title mb-3" style="color:#44A08D;">01. Apply For Loan</h2>
+                            <p>A small river named Duden flows by their place and supplies it with the necessary
+                                regelialia.
+                                It is a paradisematic country, in which roasted parts of sentences fly into your
+                                mouth.</p>
+
+                            <p style="color:#44A08D;"><a class="btn btn-info mr-2 mb-2" href="#">Learn More</a></p>
+                        </div>
+                        <div>
+                            <h2 class="section-title mb-3" style="color:#44A08D;">02. Application In Process</h2>
+                            <p>A small river named Duden flows by their place and supplies it with the necessary
+                                regelialia.
+                                It is a paradisematic country, in which roasted parts of sentences fly into your
+                                mouth.</p>
+                            <p style="color:#44A08D;"><a class="btn btn-info mr-2 mb-2" href="#">Learn More</a></p>
+                        </div>
+                        <div>
+                            <h2 class="section-title mb-3" style="color:#44A08D;">03. Final Decision</h2>
+                            <p>A small river named Duden flows by their place and supplies it with the necessary
+                                regelialia.
+                                It is a paradisematic country, in which roasted parts of sentences fly into your
+                                mouth.</p>
+
+                            <p style="color:#44A08D;"><a class="btn btn-info mr-2 mb-2" href="#">Learn More</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

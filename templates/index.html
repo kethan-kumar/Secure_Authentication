@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" rel="stylesheet">
+
+    <script crossorigin="anonymous"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <title>Loan Application</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 10%;
+            background: #44A08D;
+            background: -webkit-linear-gradient(to right, #093637, #44A08D);
+            background: linear-gradient(to right, #093637, #44A08D);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row align-middle">
+        <div class="col-md-6 " style="color:white;">
+            <p style="font-size:45px;">CLOUD9</p>
+            <p style="font-size:25px;">SECURE BANKING SOLUTION</p>
+
+        </div>
+        <div class="col-md-1">
+            <div style="border-left: 6px solid 	#008080;height: 250px;"></div>
+        </div>
+        <div class="col-md-5  card">
+            <div class="card-body">
+                <!--NOTIFICATION-->
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{ message }}</strong>
+                    <button aria-label="Close" class="btn-close" data-bs-dismiss="alert"
+                            type="button"></button>
+                </div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <!--********************-->
+                <!--TABS FOR REGISTRATION AND LOGGING-->
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button aria-controls="home" aria-selected="true" class="nav-link active" data-bs-target="#login"
+                                data-bs-toggle="tab" id="login-tab" role="tab" type="button">Login
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button aria-controls="profile" aria-selected="false" class="nav-link" data-bs-target="#register"
+                                data-bs-toggle="tab" id="register-tab" role="tab" type="button">Register
+                        </button>
+                    </li>
+
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div aria-labelledby="login-tab" class="tab-pane fade show active" id="login" role="tabpanel">
+                        <form action="/login" method="post">
+                            <div class="form-group">
+                                <label for="emailId">Email Address</label>
+                                <input class="form-control" id="emailId" name="userName" required
+                                       type="email" value="{{ userId }}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="InputPassword">Password</label>
+                                <input class="form-control" id="InputPassword" name="password" required
+                                       type="password" value="{{ password }}">
+                            </div>
+                            {% if OTP %}
+                            <div class="form-group">
+                                <label for="InputOTP">OTP</label>
+                                <input class="form-control" id="InputOTP" name="OTP" required type="text">
+                            </div>
+                            {% endif %}
+                            <button class="btn btn-primary" style="margin-top:10px;" type="submit">Submit</button>
+                        </form>
+
+                    </div>
+                    <div aria-labelledby="register-tab" class="tab-pane fade" id="register" role="tabpanel">
+                        <form action="/register" id="registerForm" method="post">
+
+                            <div class="form-group">
+                                <label for="accountNumber">Account number</label>
+                                <input class="form-control" id="accountNumber" name="account_number" placeholder="Enter 10 digit account number"
+                                       type="text">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="userName">Username</label>
+                                <input class="form-control" id="userName" name="username" type="text">
+                            </div>
+
+                            <div class="form-group ">
+                                <label for="Password">Password</label>
+                                <input class="form-control" id="Password" name="password" type="password">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="emailAddress">Email Address</label>
+                                <input class="form-control" id="emailAddress" name="emailid" type="email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mobileNumber">Mobile Number</label>
+                                <input class="form-control" id="mobileNumber" name="mobile" type="text">
+                            </div>
+
+
+                            <button class="btn btn-primary" style="margin-top:10px;" type="submit">Register</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-sm"></div>
+    </div>
+
+</div>
+</body>
+</html>
