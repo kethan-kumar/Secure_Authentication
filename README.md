@@ -8,6 +8,10 @@
 * [Rashmi Chandy](https://git.cs.dal.ca/chandy)
 * [Kethan Kumar Nasapu](https://git.cs.dal.ca/nasapu)
 
+## Intro
+
+Demonstration of secure authentication mechanism to authenticate users without password traveling in the network during login with the help of AuthID concept.
+
 ## AWS Services used
 
 1. AWS Lambda
